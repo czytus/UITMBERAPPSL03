@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using UITMBER.Services;
 using UITMBER.Views;
+using UITMBER.Services.Request;
+using UITMBER.Services.Authentication;
 
 namespace UITMBER
 {
@@ -13,7 +15,7 @@ namespace UITMBER
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            RegisterServices();
             MainPage = new AppShell();
         }
 
@@ -28,5 +30,19 @@ namespace UITMBER
         protected override void OnResume()
         {
         }
+
+        private void RegisterServices()
+        {
+            DependencyService.Register<MockDataStore>();
+
+            DependencyService.Register<IRequestService, RequestService>();
+            DependencyService.Register<IAuthenticationService, AuthenticationService>();
+
+            
+
+        }
+
+
+
     }
 }
