@@ -18,10 +18,10 @@ namespace UITMBER.Services.Application
             return await _requestService.GetAsync<List<GetMyApplicationsResponse>>(uri);
         }
 
-        public Task<bool> SendApplicationAsync(SendApplicationRequest input)
+        public async Task<bool> SendApplicationAsync(SendApplicationRequest input)
         {
             var uri = $"{Settings.SERVERENDPOINT}/Application/SendApplication";
-            _requestService.PostAsync<SendApplicationRequest>()
+            await _requestService.PostAsync<SendApplicationRequest>(uri, input);
             return true;
         }
 
