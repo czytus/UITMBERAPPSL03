@@ -30,7 +30,7 @@ namespace UITMBER.ViewModels
             {
                 Position = e.Position,
                 Label = "Clicked",
-                Type = Xamarin.Forms.Maps.PinType.Place
+                Type = Xamarin.Forms.Maps.PinType.SavedPin
             });
 
 
@@ -57,7 +57,10 @@ namespace UITMBER.ViewModels
         {
             try
             {
-                var location = await Geolocation.GetLastKnownLocationAsync();
+                //var location = await Geolocation.GetLastKnownLocationAsync();
+
+
+                var location = await Geolocation.GetLocationAsync( new GeolocationRequest() { DesiredAccuracy = GeolocationAccuracy.Default });
 
                 if (location != null)
                 {
