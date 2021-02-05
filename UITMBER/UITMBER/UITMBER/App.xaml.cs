@@ -5,12 +5,11 @@ using UITMBER.Services;
 using UITMBER.Views;
 using UITMBER.Services.Request;
 using UITMBER.Services.Authentication;
+
 using UITMBER.Services.Car;
 
 
 using UITMBER.Services.Application;
-
-
 
 using UITMBER.Services.Orders;
 
@@ -45,6 +44,8 @@ namespace UITMBER
 
             DependencyService.Register<IRequestService, RequestService>();
             DependencyService.Register<IAuthenticationService, AuthenticationService>();
+            DependencyService.Register<IOrderService, OrderService>();
+
 
             DependencyService.Register<ICarService, CarService>();
 

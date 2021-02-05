@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using UITMBER.Enums;
 
-namespace UITMBER.Models.Order
+namespace UITMBER.Models.Orders
+
 {
     public class Order
     {
