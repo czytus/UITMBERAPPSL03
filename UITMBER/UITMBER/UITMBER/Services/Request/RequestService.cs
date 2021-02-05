@@ -86,12 +86,15 @@ namespace UITMBER.Services.Request
 
         public async Task<TResult> PutAsync<TRequest, TResult>(string uri, TRequest data)
         {
-
             HttpClient client = CreateHttpClient();
 
             var serializedData = JsonConvert.SerializeObject(data);
+
             var response = await client.PutAsync(uri, new StringContent(serializedData, Encoding.UTF8, "application/json"));
+
             await CheckResponse(response);
+
+
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TResult>(content);

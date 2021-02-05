@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
-
 
 namespace UITMBER.Enums
 {
-    public enum CarType
+    public enum LuggageType
     {
-        Standard = 1,
-        Luxury = 2,
-        Seater7 = 3
+        None = 1,
+        Small = 2,
+        Big = 3,
+        Enormous = 4
     }
 }
