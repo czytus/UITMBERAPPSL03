@@ -13,10 +13,13 @@ namespace UITMBER.Services.Car
         public IRequestService _requestService => DependencyService.Get<IRequestService>();
         public async Task<string> Add(CarDto car)
         {
+
             var url = $"{Settings.SERVERENDPOINT}/Car/Add";
+
             var result = await _requestService.PostAsync<CarDto, string>(url, car);
             return result;
         }
+
 
         public async Task<string> Delete(long carID)
         {
@@ -24,13 +27,16 @@ namespace UITMBER.Services.Car
             var result = await _requestService.DeleteAsync<long, string>(url, carID);
             return result;
         }
-
+        
         public async Task<List<CarDto>> GetMyCars()
         {
+
             var url = $"{Settings.SERVERENDPOINT}/Car/GetMyCars";
+
             var result = await _requestService.GetAsync<List<CarDto>>(url);
             return result;
         }
+
 
         public async Task<string> Update(CarDto car)
         {

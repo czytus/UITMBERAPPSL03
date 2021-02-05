@@ -95,5 +95,6 @@ namespace UITMBER
             }
         }
 
+        public static object SERVER_ENDPOINT { get; internal set; }
     }
 }
