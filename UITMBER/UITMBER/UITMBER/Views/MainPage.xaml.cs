@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace UITMBER.Views
@@ -15,6 +16,12 @@ namespace UITMBER.Views
         public MainPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            //  var mapSpan = MapSpan.FromCenterAndRadius(new Position(), new Distance());
+
+            // mapControl.MoveToRegion(mapSpan);
         }
     }
 }
