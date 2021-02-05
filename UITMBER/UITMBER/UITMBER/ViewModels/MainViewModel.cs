@@ -33,7 +33,7 @@ namespace UITMBER.ViewModels
                 Type = Xamarin.Forms.Maps.PinType.SavedPin
             });
 
-
+             
         }
 
         private string infoText;
