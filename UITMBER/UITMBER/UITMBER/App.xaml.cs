@@ -7,6 +7,13 @@ using UITMBER.Services.Request;
 using UITMBER.Services.Authentication;
 using UITMBER.Services.UserFavouriteLocation;
 
+using UITMBER.Services.Car;
+
+
+using UITMBER.Services.Application;
+
+using UITMBER.Services.Orders;
+
 namespace UITMBER
 {
     public partial class App : Application
@@ -38,9 +45,23 @@ namespace UITMBER
 
             DependencyService.Register<IRequestService, RequestService>();
             DependencyService.Register<IAuthenticationService, AuthenticationService>();
+
             DependencyService.Register<IUserFavouriteLocationService, UserFavouriteLocationService>();
 
-            
+            DependencyService.Register<IOrderService, OrderService>();
+
+
+            DependencyService.Register<ICarService, CarService>();
+
+
+
+            DependencyService.Register<IApplicationService, ApplicationService>();
+
+
+
+            DependencyService.Register<IOrderService, OrderService>();
+
+
 
         }
 
