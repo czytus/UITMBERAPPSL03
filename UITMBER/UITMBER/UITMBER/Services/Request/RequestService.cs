@@ -48,7 +48,16 @@ namespace UITMBER.Services.Request
             return JsonConvert.DeserializeObject<TResult>(responseContent);
         }
 
+        public async Task<TResult> DeleteAsync<TResult>(string uri)
+        {
+            HttpClient httpClient = CreateHttpClient();
+            var response = await httpClient.DeleteAsync(uri);
 
+            await CheckResponse(response);
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<TResult>(responseContent);
+        }
 
         public Task<TResult> PostAsync<TResult>(string uri, TResult data)
         {
@@ -74,6 +83,7 @@ namespace UITMBER.Services.Request
         {
             return PutAsync<TResult, TResult>(uri, data);
         }
+
         public async Task<TResult> PutAsync<TRequest, TResult>(string uri, TRequest data)
         {
             HttpClient client = CreateHttpClient();
@@ -83,6 +93,7 @@ namespace UITMBER.Services.Request
             var response = await client.PutAsync(uri, new StringContent(serializedData, Encoding.UTF8, "application/json"));
 
             await CheckResponse(response);
+
 
             var content = await response.Content.ReadAsStringAsync();
 
