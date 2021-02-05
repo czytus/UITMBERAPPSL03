@@ -13,21 +13,32 @@ namespace UITMBER.Services.Orders
         public IRequestService _requestService => DependencyService.Get<IRequestService>();
 
 
-        public async Task<List<Order>> GetClientOrderDetails()
+        public async Task<List<OrderResult>> GetClientOrderDetails()
         {
-            var uri = $"{Settings.SERVERENDPOINT}/Orders/GetClientOrderDetails";
+            var uri = $"{Settings.SERVER_ENDPOINT}/Orders/GetClientOrderDetails";
 
 
-            return await _requestService.GetAsync<List<Order>>(uri);
+            return await _requestService.GetAsync<List<OrderResult>>(uri);
 
         }
 
         public async Task<List<string>> GetLuggageTypes()
         {
-            var uri = $"{Settings.SERVERENDPOINT}/Orders/GetLuggageTypes";
+
+            var uri = $"{Settings.SERVER_ENDPOINT}/Orders/GetLuggageTypes";
 
 
             return await _requestService.GetAsync<List<string>>(uri);
+
+        }
+
+        public async Task<double> GetCost(DateTime date, double distance)
+        {
+            var uri = $"{Settings.SERVER_ENDPOINT}/Orders/GetCost?date={date}&distance={distance}";
+
+
+            return await _requestService.GetAsync<double>(uri);
+
         }
 
         public async Task<List<Order>> GetMyOrders()
