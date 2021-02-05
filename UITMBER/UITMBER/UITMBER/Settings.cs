@@ -94,7 +94,6 @@ namespace UITMBER
                 AppSettings.AddOrUpdateValue(TokenExpireKey, value);
             }
         }
-
-        public static object SERVER_ENDPOINT { get; internal set; }
+        
     }
 }

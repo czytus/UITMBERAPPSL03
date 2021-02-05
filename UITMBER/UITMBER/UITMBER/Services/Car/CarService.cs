@@ -23,8 +23,8 @@ namespace UITMBER.Services.Car
 
         public async Task<string> Delete(long carID)
         {
-            var url = $"{Settings.SERVERENDPOINT}/Car/Delete";
-            var result = await _requestService.DeleteAsync<long, string>(url, carID);
+            var url = $"{Settings.SERVERENDPOINT}/Car/Delete?id={carID}";
+            var result = await _requestService.DeleteAsync<string>(url);
             return result;
         }
         

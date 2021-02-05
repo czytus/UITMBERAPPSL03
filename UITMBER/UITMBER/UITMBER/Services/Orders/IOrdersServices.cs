@@ -10,5 +10,11 @@ namespace UITMBER.Services.Orders
     {
         Task<AcceptOrderResponse> OrderAccept(Order input);
         Task<RateClientResponse> ClientRate(long idOrder, double driverRate, string info);
+
+        Task<List<Order>> GetClientOrderDetails();
+        Task<List<string>> GetLuggageTypes();
+
+        Task<List<Order>> GetMyOrders();
+        Task<List<Order>> GetCarTypes();
     }
 }

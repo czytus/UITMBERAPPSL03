@@ -24,7 +24,6 @@ namespace UITMBER.Models.Orders
         public double EndLong { get; set; }
 
         public double Distance { get; set; }
-        public CarType Type { get; set; }
         public double Cost { get; set; }
         public OrderStatus Status { get; set; }
         public PaymentType PaymentType { get; set; }

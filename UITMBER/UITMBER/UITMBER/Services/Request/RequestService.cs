@@ -48,6 +48,8 @@ namespace UITMBER.Services.Request
             return JsonConvert.DeserializeObject<TResult>(responseContent);
         }
 
+
+    
         public async Task<TResult> DeleteAsync<TResult>(string uri)
         {
             HttpClient httpClient = CreateHttpClient();
@@ -114,5 +116,7 @@ namespace UITMBER.Services.Request
             };
             return handler;
         }
+
+   
     }
 }
