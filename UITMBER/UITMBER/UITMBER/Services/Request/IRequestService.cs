@@ -20,5 +20,6 @@ namespace UITMBER.Services.Request
         Task<TResult> PutAsync<TRequest, TResult>(string uri, TRequest data);
         Task<TResult> DeleteAsync<TResult>(string uri);
 
+        Task<TResult> DeleteAsync<TRequest, TResult>(string uri, TRequest data);
     }
 }

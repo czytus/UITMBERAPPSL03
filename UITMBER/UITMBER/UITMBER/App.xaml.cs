@@ -5,6 +5,7 @@ using UITMBER.Services;
 using UITMBER.Views;
 using UITMBER.Services.Request;
 using UITMBER.Services.Authentication;
+using UITMBER.Services.Car;
 
 using UITMBER.Services.UserFavouriteLocation;
 
@@ -47,6 +48,7 @@ namespace UITMBER
 
             DependencyService.Register<IRequestService, RequestService>();
             DependencyService.Register<IAuthenticationService, AuthenticationService>();
+
             DependencyService.Register<IOrdersServices, OrdersServices>();
 
             DependencyService.Register<IUserFavouriteLocationService, UserFavouriteLocationService>();
@@ -63,6 +65,7 @@ namespace UITMBER
 
 
             DependencyService.Register<IOrderService, OrderService>();
+
 
 
 

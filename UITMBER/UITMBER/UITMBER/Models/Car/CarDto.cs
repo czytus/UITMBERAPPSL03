@@ -16,6 +16,9 @@ namespace UITMBER.Models.Car
         public int Year { get; set; }
 
         public CarType Type { get; set; }
+
+        public string Color { get; set; }
+
         public bool IsActive { get; set; }
     }
 

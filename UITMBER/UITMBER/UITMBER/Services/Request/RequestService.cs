@@ -94,11 +94,12 @@ namespace UITMBER.Services.Request
 
             await CheckResponse(response);
 
-
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TResult>(content);
         }
+
+
 
 
         // This method must be in a class in a platform project, even if

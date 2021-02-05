@@ -13,26 +13,36 @@ namespace UITMBER.Services.Car
         public IRequestService _requestService => DependencyService.Get<IRequestService>();
         public async Task<string> Add(CarDto car)
         {
-            var url = $"{Settings.SERVER_ENDPOINT}/Car/Add";
+
+            var url = $"{Settings.SERVERENDPOINT}/Car/Add";
+
             var result = await _requestService.PostAsync<CarDto, string>(url, car);
             return result;
         }
 
-        public Task<string> Delete(long carID)
-        {
-            throw new NotImplementedException();
-        }
 
+        public async Task<string> Delete(long carID)
+        {
+            var url = $"{Settings.SERVERENDPOINT}/Car/Delete";
+            var result = await _requestService.DeleteAsync<long, string>(url, carID);
+            return result;
+        }
+        
         public async Task<List<CarDto>> GetMyCars()
         {
-            var url = $"{Settings.SERVER_ENDPOINT}/Car/GetMyCars";
+
+            var url = $"{Settings.SERVERENDPOINT}/Car/GetMyCars";
+
             var result = await _requestService.GetAsync<List<CarDto>>(url);
             return result;
         }
 
-        public Task<string> Update(CarDto car)
+
+        public async Task<string> Update(CarDto car)
         {
-            throw new NotImplementedException();
+            var url = $"{Settings.SERVERENDPOINT}/Car/Uptade";
+            var result = await _requestService.PutAsync<CarDto, string>(url, car);
+            return result;
         }
     }
 }
