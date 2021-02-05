@@ -48,7 +48,16 @@ namespace UITMBER.Services.Request
             return JsonConvert.DeserializeObject<TResult>(responseContent);
         }
 
+        public async Task<TResult> DeleteAsync<TResult>(string uri)
+        {
+            HttpClient httpClient = CreateHttpClient();
+            var response = await httpClient.DeleteAsync(uri);
 
+            await CheckResponse(response);
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<TResult>(responseContent);
+        }
 
         public Task<TResult> PostAsync<TResult>(string uri, TResult data)
         {
@@ -77,6 +86,7 @@ namespace UITMBER.Services.Request
 
         public async Task<TResult> PutAsync<TRequest, TResult>(string uri, TRequest data)
         {
+
             HttpClient client = CreateHttpClient();
 
             var serializedData = JsonConvert.SerializeObject(data);
@@ -87,15 +97,6 @@ namespace UITMBER.Services.Request
             return JsonConvert.DeserializeObject<TResult>(content);
         }
 
-        public async Task<TResult> DeleteAsync<TResult>(string uri)
-        {
-            HttpClient client = CreateHttpClient();
-
-            var response = await client.DeleteAsync(uri);
-            await CheckResponse(response);
-
-            return JsonConvert.DeserializeObject<TResult>(response.ReasonPhrase);
-        }
 
         // This method must be in a class in a platform project, even if
         // the HttpClient object is constructed in a shared project.
