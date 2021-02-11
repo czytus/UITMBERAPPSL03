@@ -19,6 +19,7 @@ using UITMBER.Services.Application;
 
 using UITMBER.Services.Orders;
 using UITMBER.Services.Clients;
+using UITMBER.Services.Drivers;
 
 namespace UITMBER
 {
@@ -64,8 +65,9 @@ namespace UITMBER
             DependencyService.Register<IClinetsService, ClientsService>();
 
 
+            DependencyService.Register<IDriversService, DriversService>();
 
-
+            
 
 
 
