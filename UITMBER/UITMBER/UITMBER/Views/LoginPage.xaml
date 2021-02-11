@@ -2,13 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:vm="clr-namespace:UITMBER.ViewModels"
              mc:Ignorable="d"
              x:Class="UITMBER.Views.LoginPage"
              Shell.NavBarIsVisible="False">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label 
+                Text="Login"
+                Margin="0,0,0,0"
+                HorizontalOptions="Center"
+             ></Label>
+            <Entry
+                Text="{Binding Email}"
+                Margin="50, 0, 50, 20"
+             ></Entry>
+            <Label 
+                Text="Hasło"
+                Margin="0,0,0,0"
+                HorizontalOptions="Center"
+             ></Label>
+            <Entry
+                Text="{Binding Password}"
+                Margin="50, 0, 50, 20"
+                IsPassword="True"
+             ></Entry>
+            <Button
+                Text="Zaloguj"
+                Margin="50,0,50,20"
+                Command="{Binding LoginCommand}"
+             ></Button>
+            <Button
+                Text="Zarejestruj"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"
+                Command="{Binding RegisterCommand}"
+             ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
