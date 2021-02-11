@@ -12,7 +12,6 @@ using UITMBER.Services.Location;
 
 using UITMBER.Services.UserFavouriteLocation;
 
-using UITMBER.Services.Car;
 
 
 using UITMBER.Services.Application;
