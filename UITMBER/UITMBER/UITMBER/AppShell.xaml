@@ -35,7 +35,11 @@
         <ShellContent Title="Profile" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Locations" Icon="tab_feed" ContentTemplate="{DataTemplate local:UserFavouriteLocationPage}" />
         <ShellContent Title="Driver" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+
+        <ShellContent Title="Application" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:MyApplicationPage}" />
+
         <ShellContent Title="SendApplication" Icon="tab_about.png" ContentTemplate="{DataTemplate local:SendApplicationPage}" />
+
     </TabBar>
 
     <!--

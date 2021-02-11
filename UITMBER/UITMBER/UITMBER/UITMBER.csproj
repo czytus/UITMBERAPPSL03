@@ -18,9 +18,13 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
 
+    <EmbeddedResource Update="Views\MyApplicationPage.xaml">
+
+
     <EmbeddedResource Update="Views\UserFavouriteLocationPage.xaml">
 
     <EmbeddedResource Update="Views\SendApplicationPage.xaml">
+
 
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
