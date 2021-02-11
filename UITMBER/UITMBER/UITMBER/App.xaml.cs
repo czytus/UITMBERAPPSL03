@@ -16,6 +16,7 @@ using UITMBER.Services.Application;
 
 
 using UITMBER.Services.Orders;
+using UITMBER.Services.Clients;
 
 namespace UITMBER
 {
@@ -52,7 +53,7 @@ namespace UITMBER
             DependencyService.Register<IUserFavouriteLocationService, UserFavouriteLocationService>();
             DependencyService.Register<ICarService, CarService>();
             DependencyService.Register<IApplicationService, ApplicationService>();
-
+            DependencyService.Register<IClinetsService, ClientsService>();
 
 
 
