@@ -31,7 +31,7 @@
 
     <TabBar>
         <ShellContent Title="Main" Icon="tab_about.png" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
-        <ShellContent Title="Orders" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Orders" Icon="tab_about.png" Route="OrdersPage" ContentTemplate="{DataTemplate local:OrdersPage}" />
         <ShellContent Title="Profile" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
         <ShellContent Title="Driver" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </TabBar>
