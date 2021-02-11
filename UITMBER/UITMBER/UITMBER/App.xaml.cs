@@ -6,6 +6,9 @@ using UITMBER.Views;
 using UITMBER.Services.Request;
 using UITMBER.Services.Authentication;
 using UITMBER.Services.Car;
+using UITMBER.Services.Register;
+using UITMBER.Services.Location;
+
 
 using UITMBER.Services.UserFavouriteLocation;
 
@@ -53,7 +56,14 @@ namespace UITMBER
             DependencyService.Register<IUserFavouriteLocationService, UserFavouriteLocationService>();
             DependencyService.Register<ICarService, CarService>();
             DependencyService.Register<IApplicationService, ApplicationService>();
+
+            DependencyService.Register<IRegisterService, RegisterService>();
+            DependencyService.Register<ILocationService, LocationService>();
+
+
+
             DependencyService.Register<IClinetsService, ClientsService>();
+
 
 
 
